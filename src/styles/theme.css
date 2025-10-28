@@ -1,0 +1,244 @@
+:root {
+  --bg: #fffaf5;
+  --text: #2e2e2e;
+  --muted: #6b6b6b;
+  --primary: #d4a373; /* or from logo accents */
+  --accent: #fdecef;
+  --border: #eadfd3;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+html { scroll-behavior: smooth; }
+
+.container {
+  margin-inline: auto;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  backdrop-filter: saturate(1.2) blur(8px);
+  background: color-mix(in oklab, var(--bg) 80%, white 20%);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.brand { display: flex; align-items: center; gap: 0.5rem; }
+.brand-logo { width: 50px; height: 50px; border-radius: 6px; object-fit: cover; }
+.brand-name { font-weight: 600; letter-spacing: 0.2px; }
+.nav-links { display: flex; gap: 1rem; }
+.nav-links a { color: var(--text); text-decoration: none; padding: 0.5rem 0.75rem; border-radius: 6px; }
+.nav-links a.active {
+  background: color-mix(in oklab, var(--primary) 70%, white 30%);
+  color: white;
+  border: 1px solid color-mix(in oklab, var(--primary) 60%, black 10%);
+}
+.nav-links a.active:hover { filter: brightness(0.95); }
+
+main { min-height: 60vh; }
+
+.hero { 
+  padding: clamp(2rem, 6vw, 4rem) 0; 
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(224, 194, 194, 0.22);
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.hero .hero-title {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+}
+.hero .hero-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+}
+.hero-title { font-size: clamp(2rem, 5vw, 3rem); margin: 0; }
+.hero-subtitle { color: var(--muted); margin: 0.5rem 0 1.25rem; }
+
+.section-title { font-size: 1.75rem; margin: 1.5rem 1rem; }
+.section-subtitle { margin: 1.5rem 1rem; }
+.category-title { font-size: 1.5rem; margin: 1.5rem 1rem; }
+.content p { line-height: 1.6; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.75rem; }
+.grid-item { position: relative; overflow: hidden; border-radius: 10px; border: 1px solid var(--border); background: #fff; }
+.grid-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.grid-item figcaption { padding: 0.5rem 0.75rem; color: var(--muted); font-size: 0.9rem; }
+/* Filigrane discret sur les vignettes du portfolio */
+.grid-item::after {
+  content: "Lens & Lights Visuals";
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 2px 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,.95);
+  background: rgba(0,0,0,.35);
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0; /* caché par défaut */
+  transition: opacity 0.2s ease-in-out;
+}
+
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.pricing-card { border: 1px solid var(--border); border-radius: 12px; padding: 1rem; background: #fff; }
+.pricing-card .muted { color: var(--muted); margin: 0.25rem 0 0.5rem; }
+.pricing-card h3 { margin: 0 0 0.25rem; }
+.price { color: var(--primary); font-weight: 700; }
+.features { margin: 0.5rem 0 0; padding-left: 1rem; }
+.notes { color: var(--muted); font-size: 0.9rem; }
+
+/* Pricing cards (flex) */
+.pricing-cards { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: stretch; }
+.card { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 12px; background: #fff; width: clamp(260px, 28vw, 320px); box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; }
+.card-title { margin: 0; padding: 1rem; text-align: center; text-transform: uppercase; letter-spacing: 0.5px; background: color-mix(in oklab, var(--accent) 85%, white 15%); border-bottom: 1px solid var(--border); position: relative; }
+.card-title::before { content: "★"; display: block; font-size: 1.1rem; margin-bottom: 0.35rem; }
+.card .muted-label { color: var(--muted); font-weight: 400; text-transform: none; }
+.card .description { padding: 0.75rem 1rem; color: var(--muted); }
+.card h5 { margin: 0.75rem 1rem 0.25rem; }
+.card .small.muted { padding: 0 1rem; }
+.card .price { margin-top: auto; text-align: center; padding: 0.75rem 1rem; border-top: 1px solid var(--border); background: color-mix(in oklab, var(--bg) 80%, white 20%); font-weight: 700; }
+.card div { margin-left: 3rem; border-left: #2e2e2e 2px solid; padding-left: 1rem; }
+.options-list { list-style: disc; padding: 0.25rem 1.25rem 0.75rem; }
+.options-list li { display: flex; justify-content: space-between; gap: 0.5rem; }
+.price-inline { color: var(--primary); font-weight: 600; }
+
+/* About Section Styles */
+.about-main {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h3 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+  color: var(--primary);
+}
+
+.about-content p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+/* About gallery: deux sous-grilles (gauche/droite) */
+.about-gallery { display: grid; grid-template-columns: 1.5fr 1fr; }
+.gallery-left, .gallery-right { display: grid; }
+.gallery-left { grid-template-columns: repeat(2, 1fr); }
+.gallery-right { grid-template-columns: 1fr; }
+.gallery-item { position: relative; min-height: 140px; border-radius: 6px; background: #f5f5f5; }
+.gallery-item.span2 { grid-column: 1 / -1; min-height: 160px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Filigrane sur les tuiles de la galerie About */
+.gallery-item::after {
+  content: "Lens & Lights Visuals";
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 2px 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,.95);
+  background: rgba(0,0,0,.35);
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0; /* caché par défaut */
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Afficher le filigrane quand le mode watermark est actif ou à l'impression */
+.watermark-active .grid-item::after,
+.watermark-active .gallery-item::after { opacity: 1; }
+
+@media print {
+  .grid-item::after,
+  .gallery-item::after {
+    opacity: 1;
+    inset: 0; /* couvre toute la tuile */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(4rem, 12vw, 14rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.35);
+    z-index: 2;
+    transform: rotate(-18deg);
+    white-space: nowrap;
+  }
+  /* Grand filigrane de page en impression */
+  body::before {
+    content: 'Lens & Lights Visuals';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-28deg);
+    font-size: 12rem;
+    color: rgba(0,0,0,0.10);
+    z-index: 9999;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+}
+
+/* Décourager la copie des images globalement */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-touch-callout: none; /* iOS: pas de menu contextuel sur appui long */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about-main { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  .about-gallery { grid-template-columns: 1fr;}
+  .gallery-item { min-height: 120px; }
+}
+
+.footer { border-top: 1px solid var(--border); margin-top: 2rem; }
+.footer-content { padding: 1rem 0; color: var(--muted); }
+
+@media (max-width: 640px) {
+  .nav-links { gap: 0.5rem; }
+  .brand-name { display: none; }
+}

@@ -1,0 +1,95 @@
+{
+  "categories": [
+    {
+      "type": "photo",
+      "title": "Nos formules Photographie",
+      "packages": [
+        {
+          "name": "Essentielle",
+          "variant": "Formule 1",
+          "price": "À partir de 1 000€",
+          "description": "Flexible et évolutive",
+          "features": ["Cérémonie", "Vin d’honneur", "Ambiance et repas", "Photos de couple", "Photos de groupe"],
+          "deliverables": ["Minimum 200 photos", "Livraison numérique (via lien téléchargeable)", "2 rendez-vous personnalisés avant le Jour-J"]
+        },
+        {
+          "name": "Premium",
+          "variant": "Formule 2",
+          "price": "À partir de 1 300€",
+          "description": "Flexible et évolutive",
+          "features": ["Préparations", "Cérémonie", "Vin d’honneur", "Ambiance et repas", "Photos de couple", "Photos de groupe", "Gâteau", "Première danse"],
+          "deliverables": ["Minimum 300 photos", "Livraison numérique (via lien téléchargeable)", "2 rendez-vous personnalisés avant le Jour-J"]
+        }
+      ],
+      "options": [
+        {"name": "Cérémonie religieuse ou laïque", "price": "+150€"},
+        {"name": "Séance engagement", "price": "+250€"},
+        {"name": "Day after", "price": "+350€"},
+        {"name": "Livraison Express", "price": "+200€"},
+        {"name": "Album photos imprimé", "price": "À partir de +300€"}
+      ]
+    },
+    {
+      "type": "video",
+      "title": "Nos formules Vidéographie",
+      "packages": [
+        {
+          "name": "Essentielle",
+          "variant": "Formule 1",
+          "price": "À partir de 1 200€",
+          "description": "Flexible et évolutive",
+          "features": ["Cérémonie", "Vin d’honneur", "Ambiance et repas", "Photos de couple", "Photos de groupe"],
+          "video": ["Film de 5 à 8 minutes"],
+          "deliverables": ["Livraison numérique (via lien téléchargeable)", "2 rendez-vous personnalisés avant le Jour-J"]
+        },
+        {
+          "name": "Premium",
+          "variant": "Formule 2",
+          "price": "À partir de 1 500€",
+          "description": "Flexible et évolutive",
+          "features": ["Préparations", "Cérémonie", "Vin d’honneur", "Ambiance et repas", "Photos de couple", "Photos de groupe", "Gâteau", "Première danse"],
+          "video": ["Film de 13 à 18 minutes", "Prise de sons des vœux"],
+          "deliverables": ["Livraison numérique (via lien téléchargeable)", "2 rendez-vous personnalisés avant le Jour-J"]
+        }
+      ],
+      "options": [
+        {"name": "Cérémonie religieuse ou laïque", "price": "+200€"},
+        {"name": "Séance engagement", "price": "+250€"},
+        {"name": "Day after", "price": "+350€"},
+        {"name": "Livraison Express", "price": "+300€"},
+        {"name": "Format réseaux sociaux", "price": "+300€"}
+      ]
+    },
+    {
+      "type": "pack",
+      "title": "Nos Packs Photos et Vidéos",
+      "packages": [
+        {
+          "name": "Essentielle",
+          "variant": "Formule 1",
+          "price": "À partir de 2 000€",
+          "description": "Flexible et évolutive",
+          "features": ["Cérémonie", "Vin d’honneur", "Ambiance et repas", "Photos de couple", "Photos de groupe"],
+          "deliverables": ["Minimum 200 photos", "Film de 5 à 8 minutes", "Livraison numérique (via lien téléchargeable)", "2 rendez-vous personnalisés avant le Jour-J"]
+        },
+        {
+          "name": "Premium",
+          "variant": "Formule 2",
+          "price": "À partir de 2 600€",
+          "description": "Flexible et évolutive",
+          "features": ["Préparations", "Cérémonie", "Vin d’honneur", "Ambiance et repas", "Photos de couple", "Photos de groupe", "Gâteau", "Première danse"],
+          "deliverables": ["Minimum 300 photos", "Film de 13 à 18 minutes (avec prise de sons des vœux)", "Livraison numérique (via lien téléchargeable)", "2 rendez-vous personnalisés avant le Jour-J"]
+        }
+      ],
+      "options": [
+        {"name": "Cérémonie religieuse ou laïque", "price": "+200€"},
+        {"name": "Séance engagement", "price": "+250€"},
+        {"name": "Day after", "price": "+350€"},
+        {"name": "Livraison Express", "price": "+300€"},
+        {"name": "Album photos imprimé", "price": "+300€"},
+        {"name": "Format réseaux sociaux", "price": "+300€"}
+      ]
+    }
+  ],
+  "pdf": "/formules.pdf"
+}
